@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javed Marble | Account</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #f5f0e5;
+      margin: 0;
+      padding: 24px;
+    }
+    .card {
+      max-width: 420px;
+      margin: 30px auto;
+      padding: 24px;
+      background: #202020;
+      border: 1px solid #b99a58;
+      border-radius: 14px;
+    }
+    h1 { color: #d6b56d; text-align: center; }
+    input, select, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 13px;
+      margin: 8px 0;
+      border-radius: 7px;
+      font-size: 16px;
+    }
+    input, select {
+      background: #111;
+      color: white;
+      border: 1px solid #777;
+    }
+    button {
+      background: #d6b56d;
+      color: #111;
+      border: 0;
+      font-weight: bold;
+    }
+    .switch { text-align: center; margin-top: 18px; }
+    a { color: #e5c77e; }
+    #message { overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Javed Marble</h1>
+    <h2 id="heading">Create Customer Account</h2>
+
+    <form id="accountForm">
+      <div id="nameBox">
+        <input id="fullName" type="text"
+          placeholder="Full name" autocomplete="name">
+      </div>
+
+      <input id="email" type="email"
+        placeholder="Email address" autocomplete="email" required>
+
+      <input id="password" type="password"
+        placeholder="Password (minimum 6 characters)"
+        autocomplete="new-password" minlength="6" required>
+
+      <div id="typeBox">
+        <label for="accountType">Account type</label>
+        <select id="accountType">
+          <option value="customer">Customer</option>
+          <option value="supplier">Marble Supplier</option>
+        </select>
+      </div>
+
+      <button id="submitButton" type="submit">Register</button>
+    </form>
+
+    <p class="switch">
+      <span id="switchText">Already have an account?</span>
+      <a href="#" id="switchButton">Login</a>
+    </p>
+
+    <p id="message" role="status"></p>
+    <p><a href="./">Back to website</a></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = "https://icnwkvqzaxpyimgnobjj.supabase.co";
+    const SUPABASE_PUBLISHABLE_KEY = "PASTE_YOUR_PUBLISHABLE_KEY_HERE";
+
+    const client = window.supabase.createClient(
+      SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY
+    );
+
+    let isLogin = false;
+    const form = document.getElementById("accountForm");
+    const message = document.getElementById("message");
+
+    function updateMode() {
+      document.getElementById("heading").textContent =
+        isLogin ? "Customer / Supplier Login" : "Create Account";
+      document.getElementById("nameBox").hidden = isLogin;
+      document.getElementById("typeBox").hidden = isLogin;
+      document.getElementById("submitButton").textContent =
+        isLogin ? "Login" : "Register";
+      document.getElementById("switchText").textContent =
+        isLogin ? "Need a new account?" : "Already have an account?";
+      document.getElementById("switchButton").textContent =
+        isLogin ? "Register" : "Login";
+      document.getElementById("password").autocomplete =
+        isLogin ? "current-password" : "new-password";
+      message.textContent = "";
+    }
+
+    document.getElementById("switchButton").addEventListener("click", e => {
+      e.preventDefault();
+      isLogin = !isLogin;
+      updateMode();
+    });
+
+    form.addEventListener("submit", async e => {
+      e.preventDefault();
+      message.textContent = "Please wait...";
+
+      if (SUPABASE_PUBLISHABLE_KEY === "PASTE_YOUR_PUBLISHABLE_KEY_HERE") {
+        message.textContent =
+          "Setup needed: add your Supabase Publishable key in the code.";
+        return;
+      }
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      try {
+        if (isLogin) {
+          const { error } = await client.auth.signInWithPassword({
+            email, password
+          });
+          if (error) throw error;
+          message.textContent = "Login successful!";
+        } else {
+          const fullName = document.getElementById("fullName").value.trim();
+          if (!fullName) {
+            message.textContent = "Please enter your full name.";
+            return;
+          }
+
+          const { data, error } = await client.auth.signUp({
+            email,
+            password,
+            options: {
+              emailRedirectTo:
+                "https://786asifali456-oss.github.io/javed-marble-portfolio/account.html",
+              data: { full_name: fullName }
+            }
+          });
+
+          if (error) throw error;
+
+          if (data.session) {
+            message.textContent =
+              "Account created. Your profile is set as customer by default.";
+          } else {
+            message.textContent =
+              "Registration submitted. Please check your email to confirm your account.";
+          }
+        }
+      } catch (error) {
+        message.textContent = error.message || "Something went wrong.";
+      }
+    });
+
+    updateMode();
+  </script>
+</body>
+</html>
