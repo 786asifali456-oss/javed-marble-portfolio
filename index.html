@@ -633,11 +633,48 @@
         bottom: 12px;
         right: 10px;
       }
-    }
-  </style>
+    
+.gallery-item img,
+.service-card img,
+.about-photo img,
+.handicraft-grid img {
+  cursor: zoom-in;
+}
+</style>
 </head>
-
 <body>
+
+<div id="photoViewer" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:9999; align-items:center; justify-content:center; padding:20px;">
+  <button id="closePhoto" style="position:absolute; top:15px; right:20px; font-size:32px; color:white; background:transparent; border:0; cursor:pointer;">×</button>
+  <img id="largePhoto" src="" alt="Large marble photograph" style="max-width:100%; max-height:90vh; width:auto; height:auto; object-fit:contain;">
+</div>
+
+<script>
+const photoViewer = document.getElementById("photoViewer");
+const largePhoto = document.getElementById("largePhoto");
+
+document.querySelectorAll(".gallery-item img, .service-card img, .about-photo img, .handicraft-grid img").forEach(function(img) {
+  img.addEventListener("click", function() {
+    largePhoto.src = img.src;
+    photoViewer.style.display = "flex";
+  });
+});
+
+document.getElementById("closePhoto").addEventListener("click", function() {
+  photoViewer.style.display = "none";
+  largePhoto.src = "";
+});
+
+photoViewer.addEventListener("click", function(event) {
+  if (event.target === photoViewer) {
+    photoViewer.style.display = "none";
+    largePhoto.src = "";
+  }
+});
+</script>
+
+</body>
+</html>
 
   <div class="topbar">
     PREMIUM MAKRANA MARBLE • CUSTOM CARVING • ARCHITECTURAL STONEWORK
