@@ -4,10 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#171510">
+  <meta name="theme-color" content="#171610">
 
-  <title>Javed Marble | Premium Makrana Marble & Handicrafts</title>
-  <meta name="description" content="Javed Marble offers Makrana marble carving, mosque, gurdwara, temple, home and villa stonework, marble flooring, installation, polishing and handcrafted decorative items. Enquire about custom projects and handicrafts.">
+  <title>Makrana Marble Hub | Premium Marble Carving & Handicrafts</title>
+  <meta name="description" content="Discover Makrana marble carving, traditional hand-carved marble, architectural stonework and handcrafted marble products from Makrana Marble Hub. Enquire about projects and custom designs in India.">
+  <meta name="robots" content="index, follow">
 
   <style>
     :root {
@@ -20,6 +21,8 @@
       --text: #373127;
       --muted: #766f62;
       --border: #e8decb;
+      --green: #177d48;
+      --shadow: 0 14px 38px rgba(34, 26, 12, .10);
     }
 
     * {
@@ -28,7 +31,10 @@
       padding: 0;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -38,8 +44,8 @@
     }
 
     img {
-      width: 100%;
       display: block;
+      width: 100%;
     }
 
     a {
@@ -47,8 +53,12 @@
       text-decoration: none;
     }
 
-    input, select, textarea, button {
+    button, input, select, textarea {
       font: inherit;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
     }
 
     .container {
@@ -57,72 +67,82 @@
     }
 
     .topbar {
+      padding: 9px 12px;
       background: var(--dark);
       color: var(--gold-light);
       text-align: center;
-      padding: 9px 12px;
       font-size: 11px;
       letter-spacing: 1.5px;
     }
 
     header {
-      background: rgba(255,255,255,.97);
-      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 100;
+      background: rgba(255, 255, 255, .97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
     }
 
     .nav {
+      min-height: 76px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 20px;
-      min-height: 76px;
     }
 
     .brand {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 26px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      white-space: nowrap;
       color: var(--dark);
+      font: bold 24px Georgia, "Times New Roman", serif;
+      white-space: nowrap;
+      letter-spacing: .3px;
     }
 
-    .brand span { color: #a67d32; }
+    .brand span {
+      color: #a67d32;
+    }
 
     .navlinks {
       display: flex;
-      align-items: center;
       flex-wrap: wrap;
-      gap: 17px;
+      align-items: center;
+      gap: 12px 18px;
       font-size: 12px;
       font-weight: bold;
     }
 
-    .navlinks a:hover { color: #a67d32; }
-
-    .btn {
-      display: inline-block;
-      padding: 13px 20px;
-      background: var(--gold);
-      color: #201a10;
-      border: 1px solid var(--gold);
-      border-radius: 3px;
-      font-weight: bold;
-      font-size: 13px;
-      text-align: center;
-      cursor: pointer;
-      transition: .2s;
+    .navlinks a:hover {
+      color: #a67d32;
     }
 
-    .btn:hover { background: var(--gold-light); }
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      min-height: 45px;
+      padding: 12px 19px;
+      border: 1px solid var(--gold);
+      border-radius: 3px;
+      background: var(--gold);
+      color: #201a10;
+      font-size: 13px;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+
+    .btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
 
     .btn-dark {
       background: var(--dark);
-      color: white;
       border-color: var(--dark);
+      color: white;
     }
 
     .btn-dark:hover {
@@ -138,56 +158,56 @@
 
     .btn-outline:hover {
       color: var(--dark);
-      background: var(--gold-light);
     }
 
     .eyebrow {
+      margin-bottom: 12px;
       color: #a77e34;
-      text-transform: uppercase;
-      letter-spacing: 3px;
       font-size: 11px;
       font-weight: bold;
-      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
     }
 
     .hero {
+      padding: 110px 0 100px;
       color: white;
       background:
-        linear-gradient(90deg, rgba(18,16,12,.94), rgba(18,16,12,.65)),
+        linear-gradient(90deg, rgba(18,16,12,.93), rgba(18,16,12,.55)),
         url("IMG_1617.jpeg") center/cover no-repeat;
-      padding: 105px 0 100px;
     }
 
-    .hero .eyebrow { color: var(--gold-light); }
+    .hero .eyebrow {
+      color: var(--gold-light);
+    }
 
     .hero h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(39px, 6vw, 70px);
-      font-weight: normal;
-      line-height: 1.1;
-      max-width: 820px;
+      max-width: 850px;
       margin-bottom: 23px;
+      font: normal clamp(38px, 6vw, 70px)/1.1 Georgia, "Times New Roman", serif;
     }
 
-    .hero h1 span { color: var(--gold-light); }
+    .hero h1 span {
+      color: var(--gold-light);
+    }
 
     .hero p {
       max-width: 680px;
+      margin-bottom: 29px;
       color: #e6dfd1;
       font-size: 16px;
-      margin-bottom: 29px;
     }
 
     .button-row {
       display: flex;
-      gap: 12px;
       flex-wrap: wrap;
+      gap: 12px;
     }
 
     .trust {
+      padding: 23px 0;
       background: var(--dark2);
       color: white;
-      padding: 22px 0;
     }
 
     .trust-grid {
@@ -200,8 +220,7 @@
     .trust strong {
       display: block;
       color: var(--gold-light);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 21px;
+      font: 22px Georgia, "Times New Roman", serif;
     }
 
     .trust span {
@@ -210,23 +229,22 @@
       font-size: 12px;
     }
 
-    section { padding: 76px 0; }
+    section {
+      padding: 76px 0;
+    }
 
     .section-head {
       max-width: 750px;
-      text-align: center;
       margin: 0 auto 42px;
+      text-align: center;
     }
 
     .section-head h2,
     .about-copy h2,
     .quote-copy h2 {
-      color: var(--dark);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(30px, 4vw, 44px);
-      line-height: 1.2;
-      font-weight: normal;
       margin-bottom: 15px;
+      color: var(--dark);
+      font: normal clamp(30px, 4vw, 44px)/1.2 Georgia, "Times New Roman", serif;
     }
 
     .section-head p {
@@ -236,40 +254,41 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 21px;
     }
 
     .service-card {
+      overflow: hidden;
       background: white;
       border: 1px solid var(--border);
-      overflow: hidden;
-      transition: .25s;
+      transition: transform .25s, box-shadow .25s;
     }
 
     .service-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(34,26,12,.09);
+      box-shadow: var(--shadow);
     }
 
     .service-card img {
-      height: 220px;
+      height: 230px;
       object-fit: cover;
     }
 
-    .service-body { padding: 23px; }
+    .service-body {
+      padding: 23px;
+    }
 
     .service-body h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 22px;
-      color: var(--dark);
       margin-bottom: 9px;
+      color: var(--dark);
+      font: 22px Georgia, "Times New Roman", serif;
     }
 
     .service-body p {
-      font-size: 13px;
-      color: var(--muted);
       margin-bottom: 17px;
+      color: var(--muted);
+      font-size: 13px;
     }
 
     .small-link {
@@ -278,21 +297,23 @@
       font-weight: bold;
     }
 
-    .about {
+    .about,
+    .handicrafts {
       background: #f0eadd;
     }
 
-    .about-grid {
+    .about-grid,
+    .handicraft-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      gap: 48px;
+      gap: 45px;
     }
 
     .about-photo {
       padding: 8px;
       background: white;
-      box-shadow: 0 12px 35px rgba(35,27,12,.12);
+      box-shadow: var(--shadow);
     }
 
     .about-photo img {
@@ -300,15 +321,16 @@
       object-fit: cover;
     }
 
-    .about-copy p {
+    .about-copy p,
+    .handicraft-grid p {
+      margin: 15px 0;
       color: #655d51;
       font-size: 14px;
-      margin: 15px 0;
     }
 
     .checklist {
-      list-style: none;
       margin: 22px 0 27px;
+      list-style: none;
     }
 
     .checklist li {
@@ -317,15 +339,15 @@
     }
 
     .checklist li::before {
-      content: "✓";
-      color: #a67d32;
-      font-weight: bold;
       margin-right: 10px;
+      color: #a67d32;
+      content: "✓";
+      font-weight: bold;
     }
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 17px;
     }
 
@@ -341,14 +363,17 @@
       transition: transform .3s;
     }
 
-    .gallery-item:hover img { transform: scale(1.04); }
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
 
-    .gallery-caption { padding: 14px 16px; }
+    .gallery-caption {
+      padding: 14px 16px;
+    }
 
     .gallery-caption h3 {
       color: var(--dark);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 18px;
+      font: 18px Georgia, "Times New Roman", serif;
     }
 
     .gallery-caption p {
@@ -356,24 +381,39 @@
       font-size: 12px;
     }
 
+    .gallery-item img,
+    .service-card img,
+    .about-photo img,
+    .handicraft-grid img {
+      cursor: zoom-in;
+    }
+
     .process {
       background: var(--dark);
       color: white;
     }
 
-    .process .section-head h2 { color: white; }
-    .process .section-head p { color: #d2c8b6; }
-    .process .eyebrow { color: var(--gold-light); }
+    .process .section-head h2 {
+      color: white;
+    }
+
+    .process .section-head p {
+      color: #d2c8b6;
+    }
+
+    .process .eyebrow {
+      color: var(--gold-light);
+    }
 
     .process-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 22px;
     }
 
     .step {
-      border-top: 2px solid var(--gold);
       padding-top: 18px;
+      border-top: 2px solid var(--gold);
     }
 
     .step-number {
@@ -382,8 +422,8 @@
     }
 
     .step h3 {
-      font-size: 17px;
       margin: 8px 0;
+      font-size: 17px;
     }
 
     .step p {
@@ -391,28 +431,31 @@
       font-size: 13px;
     }
 
-    .quote-section { background: white; }
+    .quote-section,
+    .contact {
+      background: white;
+    }
 
     .quote-grid {
       display: grid;
       grid-template-columns: .8fr 1.2fr;
-      gap: 38px;
       align-items: start;
+      gap: 38px;
     }
 
     .quote-copy p {
+      margin: 16px 0;
       color: var(--muted);
       font-size: 14px;
-      margin: 16px 0;
     }
 
     .quote-note {
+      margin-top: 22px;
       padding: 17px;
       border-left: 3px solid var(--gold);
       background: var(--cream);
       color: #635b4d;
       font-size: 13px;
-      margin-top: 22px;
     }
 
     .order-form {
@@ -422,25 +465,27 @@
     }
 
     .order-form h3 {
-      font: 25px Georgia, "Times New Roman", serif;
-      color: var(--dark);
       margin-bottom: 7px;
+      color: var(--dark);
+      font: 25px Georgia, "Times New Roman", serif;
     }
 
     .form-intro {
+      margin-bottom: 20px;
       color: var(--muted);
       font-size: 13px;
-      margin-bottom: 20px;
     }
 
-    .field { margin-bottom: 15px; }
+    .field {
+      margin-bottom: 15px;
+    }
 
     .field label {
       display: block;
-      font-weight: bold;
-      font-size: 12px;
       margin-bottom: 6px;
       color: var(--dark);
+      font-size: 12px;
+      font-weight: bold;
     }
 
     .field input,
@@ -449,15 +494,15 @@
       display: block;
       width: 100%;
       padding: 12px;
-      background: white;
       border: 1px solid #d8cebc;
       border-radius: 2px;
+      background: white;
       color: var(--text);
       font-size: 14px;
     }
 
     .field textarea {
-      min-height: 105px;
+      min-height: 110px;
       resize: vertical;
     }
 
@@ -475,46 +520,20 @@
       margin-top: 20px;
     }
 
-    .form-buttons button {
-      flex: 1;
-      min-width: 180px;
-    }
-
-    .handicrafts {
-      background: #f0eadd;
-    }
-
-    .handicraft-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 40px;
+    .form-buttons .btn {
+      width: 100%;
     }
 
     .handicraft-grid img {
-      height: 350px;
-      object-fit: cover;
+      height: 360px;
       border: 8px solid white;
-      box-shadow: 0 10px 28px rgba(35,27,12,.1);
+      object-fit: cover;
+      box-shadow: var(--shadow);
     }
-
-    .handicraft-grid h2 {
-      font: normal clamp(30px, 4vw, 42px)/1.2 Georgia, "Times New Roman", serif;
-      color: var(--dark);
-      margin-bottom: 16px;
-    }
-
-    .handicraft-grid p {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    .contact { background: white; }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 22px;
     }
 
@@ -525,15 +544,15 @@
     }
 
     .contact-card h3 {
-      font: 25px Georgia, "Times New Roman", serif;
       margin-bottom: 12px;
       color: var(--dark);
+      font: 25px Georgia, "Times New Roman", serif;
     }
 
     .contact-card p {
-      font-size: 13px;
-      color: var(--muted);
       margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 13px;
     }
 
     .contact-line {
@@ -554,33 +573,78 @@
     }
 
     footer {
+      padding: 30px 0;
       background: var(--dark);
       color: #e4dbc9;
       text-align: center;
-      padding: 30px 0;
       font-size: 13px;
     }
 
-    footer strong { color: var(--gold-light); }
+    footer strong {
+      color: var(--gold-light);
+    }
 
     .footer-note {
-      font-size: 11px;
-      color: #bdb29e;
       margin-top: 8px;
+      color: #bdb29e;
+      font-size: 11px;
     }
 
     .floating-whatsapp {
       position: fixed;
-      bottom: 18px;
       right: 16px;
-      z-index: 30;
-      background: #177d48;
-      color: white;
-      padding: 12px 16px;
+      bottom: 18px;
+      z-index: 500;
+      padding: 12px 17px;
       border-radius: 30px;
+      background: var(--green);
+      color: white;
       box-shadow: 0 5px 20px rgba(0,0,0,.2);
       font-size: 12px;
       font-weight: bold;
+    }
+
+    .floating-whatsapp:hover {
+      background: #11673a;
+    }
+
+    #photoViewer {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(0,0,0,.94);
+    }
+
+    #photoViewer img {
+      width: auto;
+      max-width: 100%;
+      max-height: 88vh;
+      object-fit: contain;
+    }
+
+    #closePhoto {
+      position: absolute;
+      top: 12px;
+      right: 20px;
+      width: 48px;
+      height: 48px;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 38px;
+      cursor: pointer;
+    }
+
+    .viewer-help {
+      position: absolute;
+      bottom: 12px;
+      color: #eee;
+      font-size: 12px;
+      text-align: center;
     }
 
     @media (max-width: 850px) {
@@ -590,9 +654,13 @@
         padding: 14px 0;
       }
 
-      .navlinks { gap: 12px 16px; }
+      .navlinks {
+        gap: 12px 16px;
+      }
 
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
 
       .about-grid,
       .quote-grid,
@@ -600,15 +668,23 @@
         grid-template-columns: 1fr;
       }
 
-      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
 
-      .about-photo img { height: 350px; }
+      .about-photo img {
+        height: 350px;
+      }
     }
 
     @media (max-width: 540px) {
-      .hero { padding: 75px 0; }
+      .hero {
+        padding: 75px 0;
+      }
 
-      section { padding: 54px 0; }
+      section {
+        padding: 54px 0;
+      }
 
       .services-grid,
       .gallery-grid,
@@ -619,77 +695,62 @@
       }
 
       .service-card img,
-      .gallery-item img { height: 260px; }
+      .gallery-item img {
+        height: 260px;
+      }
 
-      .order-form { padding: 21px; }
+      .order-form {
+        padding: 21px;
+      }
 
-      .handicraft-grid img { height: 270px; }
+      .handicraft-grid img {
+        height: 270px;
+      }
 
-      .brand { font-size: 23px; }
+      .brand {
+        font-size: 22px;
+      }
 
-      .navlinks { font-size: 11px; }
+      .navlinks {
+        gap: 10px 13px;
+        font-size: 11px;
+      }
 
       .floating-whatsapp {
-        bottom: 12px;
         right: 10px;
+        bottom: 12px;
       }
-    
-.gallery-item img,
-.service-card img,
-.about-photo img,
-.handicraft-grid img {
-  cursor: zoom-in;
-}
-</style>
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
-
-<div id="photoViewer" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:9999; align-items:center; justify-content:center; padding:20px;">
-  <button id="closePhoto" style="position:absolute; top:15px; right:20px; font-size:32px; color:white; background:transparent; border:0; cursor:pointer;">×</button>
-  <img id="largePhoto" src="" alt="Large marble photograph" style="max-width:100%; max-height:90vh; width:auto; height:auto; object-fit:contain;">
-</div>
-
-<script>
-const photoViewer = document.getElementById("photoViewer");
-const largePhoto = document.getElementById("largePhoto");
-
-document.querySelectorAll(".gallery-item img, .service-card img, .about-photo img, .handicraft-grid img").forEach(function(img) {
-  img.addEventListener("click", function() {
-    largePhoto.src = img.src;
-    photoViewer.style.display = "flex";
-  });
-});
-
-document.getElementById("closePhoto").addEventListener("click", function() {
-  photoViewer.style.display = "none";
-  largePhoto.src = "";
-});
-
-photoViewer.addEventListener("click", function(event) {
-  if (event.target === photoViewer) {
-    photoViewer.style.display = "none";
-    largePhoto.src = "";
-  }
-});
-</script>
-
-</body>
-</html>
-
   <div class="topbar">
-    PREMIUM MAKRANA MARBLE • CUSTOM CARVING • ARCHITECTURAL STONEWORK
+    MAKRANA MARBLE HUB • TRADITIONAL CARVING • ARCHITECTURAL STONEWORK
   </div>
 
   <header>
     <div class="container nav">
-      <a href="#home" class="brand">JAVED <span>MARBLE</span></a>
+      <a href="#home" class="brand" aria-label="Makrana Marble Hub home">
+        MAKRANA <span>MARBLE HUB</span>
+      </a>
 
       <nav class="navlinks" aria-label="Main navigation">
         <a href="#home">Home</a>
         <a href="#services">Our Work</a>
-        <a href="#about">Profile</a>
+        <a href="#about">About</a>
         <a href="#gallery">Gallery</a>
-        <a href="#order">Place Enquiry</a>
+        <a href="#order">Enquiry</a>
         <a href="#handicrafts">Handicrafts</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -699,23 +760,23 @@ photoViewer.addEventListener("click", function(event) {
   <main>
     <section class="hero" id="home">
       <div class="container">
-        <div class="eyebrow">Tradition • Detail • Personal Service</div>
+        <div class="eyebrow">Tradition • Detail • Craftsmanship</div>
 
         <h1>
-          Your Vision.<br>
-          <span>Our Marble Craftsmanship.</span>
+          The Beauty of Marble.<br>
+          <span>The Art of Hand Carving.</span>
         </h1>
 
         <p>
-          Makrana marble carving, architectural stonework, flooring,
-          polishing and installation for mosques, gurdwaras, temples,
-          homes and villas. Custom marble handicrafts are also welcome.
-          Tell us your design, requirements and budget.
+          Explore Makrana marble craftsmanship, traditional carving,
+          decorative stonework and handcrafted marble products.
+          From mandir entrances and architectural details to custom
+          decorative pieces, tell us what you have in mind.
         </p>
 
         <div class="button-row">
-          <a class="btn" href="#order">Request a Project Quote</a>
-          <a class="btn btn-outline" href="#gallery">Explore Our Gallery</a>
+          <a class="btn" href="#order">Request a Quote</a>
+          <a class="btn btn-outline" href="#gallery">Explore Our Work</a>
         </div>
       </div>
     </section>
@@ -723,16 +784,16 @@ photoViewer.addEventListener("click", function(event) {
     <div class="trust">
       <div class="container trust-grid">
         <div>
-          <strong>15 Years</strong>
-          <span>Marble Work Experience</span>
+          <strong>Traditional Skills</strong>
+          <span>Makrana Marble Craftsmanship</span>
         </div>
         <div>
-          <strong>Made to Order</strong>
-          <span>Discuss Your Own Design</span>
+          <strong>Custom Designs</strong>
+          <span>Discuss Your Requirements</span>
         </div>
         <div>
           <strong>Personal Service</strong>
-          <span>Work Planned Around Your Needs</span>
+          <span>Enquiries Direct to Our Business</span>
         </div>
       </div>
     </div>
@@ -743,19 +804,19 @@ photoViewer.addEventListener("click", function(event) {
           <div class="eyebrow">Our Services</div>
           <h2>Marble Work for Every Vision</h2>
           <p>
-            From a small decorative item to a large architectural project,
-            tell us what you need. We can discuss the design, materials,
-            budget and scope before preparing a quotation.
+            Tell us about your design, measurements, materials and
+            requirements. We can discuss the project scope and prepare
+            a quotation based on the information you provide.
           </p>
         </div>
 
         <div class="services-grid">
           <article class="service-card">
-            <img src="IMG_1617.jpeg" alt="Marble craftsmanship portfolio" loading="lazy">
+            <img src="IMG_1617.jpeg" alt="Marble craftsmanship from our portfolio" loading="lazy">
             <div class="service-body">
               <h3>Mosque Marble Work</h3>
-              <p>Architectural marble, arches, columns, entrances, decorative panels and carving.</p>
-              <a class="small-link" href="#order" data-category="Mosque marble work">ENQUIRE ABOUT THIS SERVICE →</a>
+              <p>Architectural marble, entrances, columns, decorative panels and carving enquiries.</p>
+              <a class="small-link" href="#order" data-category="Mosque marble work">ENQUIRE ABOUT THIS WORK →</a>
             </div>
           </article>
 
@@ -764,43 +825,43 @@ photoViewer.addEventListener("click", function(event) {
             <div class="service-body">
               <h3>Gurdwara Marble Work</h3>
               <p>Custom stonework, decorative details, marble panels and architectural features.</p>
-              <a class="small-link" href="#order" data-category="Gurdwara marble work">ENQUIRE ABOUT THIS SERVICE →</a>
+              <a class="small-link" href="#order" data-category="Gurdwara marble work">ENQUIRE ABOUT THIS WORK →</a>
             </div>
           </article>
 
           <article class="service-card">
-            <img src="IMG_1659.jpeg" alt="Marble work portfolio" loading="lazy">
+            <img src="IMG_1659.jpeg" alt="Traditional temple marble work" loading="lazy">
             <div class="service-body">
-              <h3>Temple Marble Work</h3>
-              <p>Traditional carving for mandir entrances, pillars, mandaps and ornamental details.</p>
-              <a class="small-link" href="#order" data-category="Temple marble work">ENQUIRE ABOUT THIS SERVICE →</a>
+              <h3>Temple & Mandir Work</h3>
+              <p>Traditional carving enquiries for mandir entrances, pillars and ornamental details.</p>
+              <a class="small-link" href="#order" data-category="Temple or mandir marble work">ENQUIRE ABOUT THIS WORK →</a>
             </div>
           </article>
 
           <article class="service-card">
-            <img src="IMG_1695.jpeg" alt="Marble finishing and architectural work" loading="lazy">
+            <img src="IMG_1695.jpeg" alt="Residential marble and architectural stonework" loading="lazy">
             <div class="service-body">
               <h3>Homes & Villas</h3>
-              <p>Marble floors, staircases, walls, doorways, counters and residential interiors.</p>
-              <a class="small-link" href="#order" data-category="Home or villa marble work">ENQUIRE ABOUT THIS SERVICE →</a>
+              <p>Discuss marble flooring, staircases, walls, doorways and residential stonework.</p>
+              <a class="small-link" href="#order" data-category="Home or villa marble work">ENQUIRE ABOUT THIS WORK →</a>
             </div>
           </article>
 
           <article class="service-card">
-            <img src="IMG_1698.jpeg" alt="Traditional stonework detail" loading="lazy">
+            <img src="IMG_1698.jpeg" alt="Marble hand carving and finishing" loading="lazy">
             <div class="service-body">
               <h3>Hand Carving & Finishing</h3>
-              <p>Traditional patterns, custom carving, edge finishing, polishing and restoration enquiries.</p>
-              <a class="small-link" href="#order" data-category="Marble hand carving and finishing">ENQUIRE ABOUT THIS SERVICE →</a>
+              <p>Traditional patterns, custom carving, polishing, edge finishing and restoration enquiries.</p>
+              <a class="small-link" href="#order" data-category="Marble hand carving and finishing">ENQUIRE ABOUT THIS WORK →</a>
             </div>
           </article>
 
           <article class="service-card">
-            <img src="IMG_1703.jpeg" alt="Marble craftsmanship detail" loading="lazy">
+            <img src="IMG_1703.jpeg" alt="Decorative marble handicraft workmanship" loading="lazy">
             <div class="service-body">
               <h3>Marble Handicrafts</h3>
-              <p>Decorative pieces, vases, ornaments and specially requested handcrafted items.</p>
-              <a class="small-link" href="#order" data-category="Marble handicrafts">ENQUIRE ABOUT THIS SERVICE →</a>
+              <p>Enquire about decorative pieces, ornaments, carved items and custom designs.</p>
+              <a class="small-link" href="#order" data-category="Marble handicrafts">ENQUIRE ABOUT THIS WORK →</a>
             </div>
           </article>
         </div>
@@ -810,32 +871,32 @@ photoViewer.addEventListener("click", function(event) {
     <section class="about" id="about">
       <div class="container about-grid">
         <div class="about-photo">
-          <img src="IMG_1734.jpeg" alt="Javed Marble craftsmanship portfolio" loading="lazy">
+          <img src="IMG_1734.jpeg" alt="Makrana Marble Hub craftsmanship portfolio" loading="lazy">
         </div>
 
         <div class="about-copy">
-          <div class="eyebrow">Our Profile</div>
+          <div class="eyebrow">About Our Work</div>
           <h2>Traditional Marble Skills. A Personal Approach.</h2>
 
           <p>
-            Javed Marble focuses on traditional marble craftsmanship
-            and architectural stonework, including Makrana marble
-            carving, decorative work, polishing and installation.
+            Makrana Marble Hub presents marble craftsmanship,
+            traditional carving, decorative work and architectural
+            stonework through a dedicated portfolio.
           </p>
 
           <p>
-            Every customer has different needs. We aim to understand
-            your design, measurements, material preference and budget
-            before discussing the most suitable way to complete your work.
+            Every project has different requirements. Share your design,
+            measurements, preferred material and budget so we can discuss
+            the available options and next steps.
           </p>
 
           <ul class="checklist">
             <li>Traditional marble carving and decorative work</li>
             <li>Marble flooring and installation enquiries</li>
-            <li>Cutting, shaping, polishing and finishing</li>
+            <li>Cutting, shaping, polishing and finishing enquiries</li>
             <li>Custom designs for homes and religious buildings</li>
-            <li>Marble handicrafts made to customer requirements</li>
-            <li>Quotation discussions based on the project scope</li>
+            <li>Marble handicrafts and decorative pieces</li>
+            <li>Quotations based on the confirmed project scope</li>
           </ul>
 
           <a class="btn btn-dark" href="#order">Tell Us About Your Project</a>
@@ -849,23 +910,22 @@ photoViewer.addEventListener("click", function(event) {
           <div class="eyebrow">Selected Photographs</div>
           <h2>Our Marble Work Gallery</h2>
           <p>
-            Browse the existing work photographs. Additional verified
-            photographs of mosque, gurdwara, temple, residential and
-            handicraft projects can be added later.
+            Explore photographs from the existing portfolio.
+            Tap any photograph to view it in a larger size.
           </p>
         </div>
 
         <div class="gallery-grid">
           <article class="gallery-item">
-            <img src="IMG_1617.jpeg" alt="Javed Marble portfolio photo 1" loading="lazy">
+            <img src="IMG_1617.jpeg" alt="Marble craftsmanship portfolio photograph 1" loading="lazy">
             <div class="gallery-caption">
               <h3>Marble Craftsmanship</h3>
-              <p>Selected work photograph</p>
+              <p>Selected portfolio photograph</p>
             </div>
           </article>
 
           <article class="gallery-item">
-            <img src="IMG_1622.jpeg" alt="Javed Marble portfolio photo 2" loading="lazy">
+            <img src="IMG_1622.jpeg" alt="Decorative stonework portfolio photograph 2" loading="lazy">
             <div class="gallery-caption">
               <h3>Decorative Stonework</h3>
               <p>Detail and workmanship</p>
@@ -873,15 +933,15 @@ photoViewer.addEventListener("click", function(event) {
           </article>
 
           <article class="gallery-item">
-            <img src="IMG_1659.jpeg" alt="Javed Marble portfolio photo 3" loading="lazy">
+            <img src="IMG_1659.jpeg" alt="Marble work portfolio photograph 3" loading="lazy">
             <div class="gallery-caption">
               <h3>Marble Work</h3>
-              <p>Craftsmanship portfolio</p>
+              <p>Traditional craftsmanship</p>
             </div>
           </article>
 
           <article class="gallery-item">
-            <img src="IMG_1695.jpeg" alt="Javed Marble portfolio photo 4" loading="lazy">
+            <img src="IMG_1695.jpeg" alt="Marble finishing portfolio photograph 4" loading="lazy">
             <div class="gallery-caption">
               <h3>Marble Finishing</h3>
               <p>Stonework details</p>
@@ -889,15 +949,15 @@ photoViewer.addEventListener("click", function(event) {
           </article>
 
           <article class="gallery-item">
-            <img src="IMG_1698.jpeg" alt="Javed Marble portfolio photo 5" loading="lazy">
+            <img src="IMG_1698.jpeg" alt="Architectural marble portfolio photograph 5" loading="lazy">
             <div class="gallery-caption">
               <h3>Architectural Work</h3>
-              <p>Selected work photograph</p>
+              <p>Selected portfolio photograph</p>
             </div>
           </article>
 
           <article class="gallery-item">
-            <img src="IMG_1703.jpeg" alt="Javed Marble portfolio photo 6" loading="lazy">
+            <img src="IMG_1703.jpeg" alt="Marble detail portfolio photograph 6" loading="lazy">
             <div class="gallery-caption">
               <h3>Marble Details</h3>
               <p>Craftsmanship portfolio</p>
@@ -905,10 +965,10 @@ photoViewer.addEventListener("click", function(event) {
           </article>
 
           <article class="gallery-item">
-            <img src="IMG_1734.jpeg" alt="Javed Marble portfolio photo 7" loading="lazy">
+            <img src="IMG_1734.jpeg" alt="Marble work portfolio photograph 7" loading="lazy">
             <div class="gallery-caption">
               <h3>Marble Work Portfolio</h3>
-              <p>Selected work photograph</p>
+              <p>Selected portfolio photograph</p>
             </div>
           </article>
         </div>
@@ -918,11 +978,11 @@ photoViewer.addEventListener("click", function(event) {
     <section class="process">
       <div class="container">
         <div class="section-head">
-          <div class="eyebrow">Our Working Process</div>
-          <h2>Designed Around Your Requirements</h2>
+          <div class="eyebrow">How It Works</div>
+          <h2>From Your Idea to a Quotation</h2>
           <p>
-            We discuss the work with you before the project proceeds.
-            Final pricing and timing depend on the confirmed requirements.
+            We discuss the requirements before confirming any work.
+            Final pricing, delivery and timing depend on the agreed scope.
           </p>
         </div>
 
@@ -930,7 +990,7 @@ photoViewer.addEventListener("click", function(event) {
           <div class="step">
             <div class="step-number">01</div>
             <h3>Share Your Idea</h3>
-            <p>Send your design, reference photograph or description.</p>
+            <p>Describe the project or share the name of the item you need.</p>
           </div>
 
           <div class="step">
@@ -942,13 +1002,13 @@ photoViewer.addEventListener("click", function(event) {
           <div class="step">
             <div class="step-number">03</div>
             <h3>Review the Quote</h3>
-            <p>Confirm the price, work scope and expected timeline before agreeing.</p>
+            <p>Discuss the price, scope of work and expected timeline.</p>
           </div>
 
           <div class="step">
             <div class="step-number">04</div>
-            <h3>Plan Your Project</h3>
-            <p>Agree on the next steps, delivery arrangements and installation needs.</p>
+            <h3>Plan the Next Steps</h3>
+            <p>Confirm the agreed arrangements before proceeding.</p>
           </div>
         </div>
       </div>
@@ -961,44 +1021,55 @@ photoViewer.addEventListener("click", function(event) {
           <h2>Tell Us What You Have in Mind</h2>
 
           <p>
-            Need marble for a mosque, gurdwara, temple, home or villa?
-            Looking for hand carving, flooring, polishing, installation
-            or a decorative handicraft?
+            Looking for marble carving, architectural stonework,
+            flooring, polishing or a decorative handicraft?
+            Tell us about your requirements and project location in India.
           </p>
 
           <p>
-            Complete the form with your requirements. It will prepare
-            a WhatsApp message so you can review and send your enquiry.
+            Complete the form and press the button. Your enquiry details
+            will be prepared as a WhatsApp message for you to review
+            and send.
           </p>
 
           <div class="quote-note">
-            <strong>Customer-first approach</strong><br>
-            We aim to discuss suitable materials and options for your
-            budget. The final price depends on design, quantity, material,
-            transport, installation and project location.
+            <strong>Your enquiry reference</strong><br>
+            A reference number will be generated when you submit the form.
+            Keep it in your message for easier follow-up. This reference
+            is generated in your browser; it is not a central order record.
+          </div>
+
+          <div class="quote-note">
+            <strong>Quotation information</strong><br>
+            Prices depend on the design, dimensions, quantity, material,
+            finishing, transport and project location. No price or order
+            is confirmed until it is discussed with the business.
           </div>
         </div>
 
         <form class="order-form" id="projectForm">
           <h3>Request a Quote</h3>
           <p class="form-intro">
-            Fill in your details and continue to WhatsApp.
+            Fill in the details below to prepare your WhatsApp enquiry.
           </p>
 
           <div class="field">
             <label for="customerName">Your Name *</label>
-            <input id="customerName" name="customerName" required
-                   maxlength="100" placeholder="Enter your name">
+            <input id="customerName" name="customerName"
+                   required maxlength="100"
+                   autocomplete="name"
+                   placeholder="Enter your name">
           </div>
 
           <div class="field">
-            <label for="customerCountry">Your Country / Project Location *</label>
-            <input id="customerCountry" name="customerCountry" required
-                   maxlength="120" placeholder="Country, city or project location">
+            <label for="customerCountry">City / Project Location in India *</label>
+            <input id="customerCountry" name="customerCountry"
+                   required maxlength="120"
+                   placeholder="City, state or project location in India">
           </div>
 
           <div class="field">
-            <label for="requestType">What do you need? *</label>
+            <label for="requestType">What Do You Need? *</label>
             <select id="requestType" name="requestType" required>
               <option value="">Choose an option</option>
               <option>Large project</option>
@@ -1013,38 +1084,32 @@ photoViewer.addEventListener("click", function(event) {
               <option value="">Choose your requirement</option>
               <option>Mosque marble work</option>
               <option>Gurdwara marble work</option>
-              <option>Temple marble work</option>
+              <option>Temple or mandir marble work</option>
               <option>Home or villa marble work</option>
               <option>Marble flooring or installation</option>
-              <option>Marble carving or naqashi</option>
-              <option>Polishing or finishing</option>
+              <option>Marble hand carving and finishing</option>
+              <option>Polishing or restoration</option>
               <option>Marble handicrafts</option>
               <option>Other custom work</option>
             </select>
           </div>
 
           <div class="field">
-            <label for="budget">Approximate Budget (Optional)</label>
-            <input id="budget" name="budget" maxlength="100"
-                   placeholder="Your budget and currency">
+            <label for="budget">Approximate Budget in INR (Optional)</label>
+            <input id="budget" name="budget"
+                   maxlength="100"
+                   placeholder="Example: ₹50,000">
           </div>
 
           <div class="field">
             <label for="details">Design, Size and Other Details *</label>
-            <textarea id="details" name="details" required maxlength="1500"
-              placeholder="Describe the work, quantity, measurements or design."></textarea>
-          </div>
-
-          <div class="field">
-            <label for="contactRegion">Which WhatsApp Number?</label>
-            <select id="contactRegion" name="contactRegion">
-              <option value="india">India WhatsApp</option>
-              <option value="saudi">Saudi Arabia WhatsApp</option>
-            </select>
+            <textarea id="details" name="details"
+                      required maxlength="1500"
+                      placeholder="Describe the work, quantity, measurements or design."></textarea>
           </div>
 
           <div class="form-buttons">
-            <button class="btn" type="submit">Continue to WhatsApp</button>
+            <button class="btn" type="submit">Prepare WhatsApp Enquiry</button>
           </div>
         </form>
       </div>
@@ -1055,15 +1120,18 @@ photoViewer.addEventListener("click", function(event) {
         <div>
           <div class="eyebrow">Custom Handicrafts</div>
           <h2>Small Details. Beautiful Marble Craft.</h2>
+
           <p>
-            Ask about handmade marble vases, decorative ornaments,
-            carved pieces and special designs. Share a reference
-            photo if you have one.
+            Enquire about marble decorative pieces, carved ornaments,
+            vases and special designs. Tell us which item you want
+            and share your requirements in the enquiry message.
           </p>
+
           <p>
-            Item availability, size, material, price and delivery
-            arrangements will be discussed before confirming an order.
+            Availability, dimensions, material, pricing and delivery
+            arrangements must be confirmed before an order is agreed.
           </p>
+
           <a class="btn btn-dark" href="#order"
              data-category="Marble handicrafts">
             Enquire About Handicrafts
@@ -1072,7 +1140,7 @@ photoViewer.addEventListener("click", function(event) {
 
         <div>
           <img src="IMG_1698.jpeg"
-               alt="Example from the existing marble craftsmanship portfolio"
+               alt="Marble craftsmanship portfolio detail"
                loading="lazy">
         </div>
       </div>
@@ -1081,50 +1149,56 @@ photoViewer.addEventListener("click", function(event) {
     <section class="contact" id="contact">
       <div class="container">
         <div class="section-head">
-          <div class="eyebrow">Contact Javed Marble</div>
+          <div class="eyebrow">Contact Us</div>
           <h2>Let's Discuss Your Requirements</h2>
           <p>
-            Contact us for custom projects, marble work and handicraft enquiries.
+            Send an enquiry about marble carving, architectural work
+            or handicrafts using our business contact details.
           </p>
         </div>
 
         <div class="contact-grid">
           <div class="contact-card">
             <h3>Business Contact</h3>
-            <p>Use the contact details below to discuss your requirements.</p>
+            <p>Contact Makrana Marble Hub to discuss your requirements.</p>
 
             <div class="contact-line">
               <strong>Business Name</strong>
-              Javed Marble
+              Makrana Marble Hub
             </div>
 
             <div class="contact-line">
-              <strong>Email</strong>
+              <strong>Business Email</strong>
               <a href="mailto:jawed1409@gmail.com">jawed1409@gmail.com</a>
             </div>
 
             <div class="contact-line">
-              <strong>India WhatsApp</strong>
-              <a href="https://wa.me/918741020846">+91 87410 20846</a>
-            </div>
-
-            <div class="contact-line">
-              <strong>Saudi Arabia WhatsApp</strong>
-              <a href="https://wa.me/966556947277">+966 55 694 7277</a>
+              <strong>WhatsApp</strong>
+              <a href="https://wa.me/966556947277"
+                 target="_blank" rel="noopener noreferrer">
+                +966 55 694 7277
+              </a>
             </div>
           </div>
 
           <div class="contact-card">
             <h3>Ready to Enquire?</h3>
             <p>
-              Tell us about your project or handicraft requirement.
-              You can contact us directly on either WhatsApp number.
+              Use WhatsApp to send your requirements, or email us
+              if you prefer written communication.
             </p>
 
             <div class="contact-buttons">
-              <a class="btn" href="https://wa.me/918741020846">WhatsApp India</a>
-              <a class="btn btn-dark" href="https://wa.me/966556947277">WhatsApp Saudi Arabia</a>
-              <a class="btn" href="mailto:jawed1409@gmail.com">Send Email</a>
+              <a class="btn"
+                 href="https://wa.me/966556947277?text=Hello%20Makrana%20Marble%20Hub%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+                 target="_blank" rel="noopener noreferrer">
+                WhatsApp Enquiry
+              </a>
+
+              <a class="btn btn-dark"
+                 href="mailto:jawed1409@gmail.com?subject=Makrana%20Marble%20Hub%20Enquiry">
+                Send Email
+              </a>
             </div>
           </div>
         </div>
@@ -1134,71 +1208,140 @@ photoViewer.addEventListener("click", function(event) {
 
   <footer>
     <div class="container">
-      <strong>JAVED MARBLE</strong>
-      <p>Premium Makrana Marble • Carving • Architectural Stonework • Handicrafts</p>
+      <strong>MAKRANA MARBLE HUB</strong>
+      <p>Makrana Marble • Traditional Carving • Architectural Stonework • Handicrafts</p>
       <p class="footer-note">
-        © <span id="year"></span> Javed Marble. All rights reserved.
+        © <span id="year"></span> Makrana Marble Hub. All rights reserved.
       </p>
     </div>
   </footer>
 
   <a class="floating-whatsapp"
-     href="https://wa.me/918741020846?text=Hello%20Javed%20Marble%2C%20I%20would%20like%20to%20make%20an%20enquiry."
-     aria-label="Contact Javed Marble on WhatsApp">
+     href="https://wa.me/966556947277?text=Hello%20Makrana%20Marble%20Hub%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contact Makrana Marble Hub on WhatsApp">
     WhatsApp Enquiry
   </a>
 
+  <div id="photoViewer"
+       role="dialog"
+       aria-modal="true"
+       aria-label="Enlarged marble photograph">
+    <button id="closePhoto" type="button" aria-label="Close enlarged photograph">×</button>
+    <img id="largePhoto" src="" alt="Enlarged marble portfolio photograph">
+    <p class="viewer-help">Tap outside the photograph or press × to close</p>
+  </div>
+
   <script>
+    "use strict";
+
+    // Business WhatsApp: Saudi Arabia number, digits only.
+    const BUSINESS_WHATSAPP = "966556947277";
+
+    // Footer year.
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
-    const form = document.getElementById("projectForm");
+    // Enlarge portfolio photographs.
+    const photoViewer = document.getElementById("photoViewer");
+    const largePhoto = document.getElementById("largePhoto");
+    const closePhoto = document.getElementById("closePhoto");
 
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      if (!form.reportValidity()) return;
-
-      const data = new FormData(form);
-      const region = data.get("contactRegion");
-
-      const phone = region === "saudi"
-        ? "966556947277"
-        : "918741020846";
-
-      const message = [
-        "Hello Javed Marble, I would like to make an enquiry.",
-        "",
-        "Name: " + data.get("customerName"),
-        "Project location: " + data.get("customerCountry"),
-        "Request type: " + data.get("requestType"),
-        "Work category: " + data.get("category"),
-        "Approximate budget: " + (data.get("budget") || "Not specified"),
-        "Details: " + data.get("details"),
-        "",
-        "Please let me know the suitable options and quotation."
-      ].join("\n");
-
-      const url = "https://wa.me/" + phone +
-        "?text=" + encodeURIComponent(message);
-
-      window.location.href = url;
+    document.querySelectorAll(
+      ".gallery-item img, .service-card img, .about-photo img, .handicraft-grid img"
+    ).forEach(function (img) {
+      img.addEventListener("click", function () {
+        largePhoto.src = img.src;
+        largePhoto.alt = img.alt || "Marble portfolio photograph";
+        photoViewer.style.display = "flex";
+        closePhoto.focus();
+      });
     });
 
-    document.querySelectorAll("[data-category]").forEach(function(link) {
-      link.addEventListener("click", function() {
+    function hidePhotoViewer() {
+      photoViewer.style.display = "none";
+      largePhoto.src = "";
+    }
+
+    closePhoto.addEventListener("click", hidePhotoViewer);
+
+    photoViewer.addEventListener("click", function (event) {
+      if (event.target === photoViewer) {
+        hidePhotoViewer();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && photoViewer.style.display === "flex") {
+        hidePhotoViewer();
+      }
+    });
+
+    // Service links automatically select the matching enquiry category.
+    document.querySelectorAll("[data-category]").forEach(function (link) {
+      link.addEventListener("click", function () {
         const category = link.getAttribute("data-category");
         const select = document.getElementById("category");
 
         for (const option of select.options) {
-          if (option.text.toLowerCase() === category.toLowerCase()) {
+          if (option.value.toLowerCase() === category.toLowerCase()) {
             select.value = option.value;
             break;
           }
         }
       });
     });
-  </script>
 
+    // Create an enquiry reference and prepare a WhatsApp message.
+    // The reference is generated in this browser and is not stored centrally.
+    function createEnquiryReference() {
+      const now = new Date();
+      const date = [
+        now.getFullYear(),
+        String(now.getMonth() + 1).padStart(2, "0"),
+        String(now.getDate()).padStart(2, "0")
+      ].join("");
+
+      const randomPart = Math.random().toString(36).slice(2, 7).toUpperCase();
+
+      return "MMH-" + date + "-" + randomPart;
+    }
+
+    const form = document.getElementById("projectForm");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (!form.reportValidity()) {
+        return;
+      }
+
+      const data = new FormData(form);
+      const enquiryId = createEnquiryReference();
+
+      const message = [
+        "Hello Makrana Marble Hub, I would like to make an enquiry.",
+        "",
+        "Enquiry Reference: " + enquiryId,
+        "Name: " + data.get("customerName"),
+        "Project location in India: " + data.get("customerCountry"),
+        "Request type: " + data.get("requestType"),
+        "Work category: " + data.get("category"),
+        "Approximate budget: " + (data.get("budget") || "Not specified"),
+        "Project details: " + data.get("details"),
+        "",
+        "Please let me know the suitable options and quotation.",
+        "Thank you."
+      ].join("\n");
+
+      const whatsappURL =
+        "https://wa.me/" + BUSINESS_WHATSAPP +
+        "?text=" + encodeURIComponent(message);
+
+      // Open WhatsApp following the user's form submission.
+      window.location.href = whatsappURL;
+    });
+  </script>
 </body>
 </html>
